@@ -15,6 +15,31 @@ async function fetchData(pokemon) {
         }
         const data = await response.json();
 
+        const bckg = document.getElementById("card");
+        console.log("oi")
+        switch(data.types[0].type.name) {
+            case "fire":
+                bckg.style.background = "linear-gradient(to bottom right, orange, red";
+                break;
+
+        case "grass":
+            bckg.style.background= "linear-gradient(to bottom right, white, green";
+            break;
+
+            case "water":
+                bckg.style.background = "linear-gradient(to bottom right, blue, lightblue)";
+                break;
+
+            case "electric":
+                bckg.style.background = "linear-gradient(to bottom right, yellow, gold)";
+                break;
+                
+            default:
+                bckg.style.background = "linear-gradient(to bottom right, gray, white)";
+                break;
+        }
+    
+
         const imageElement = document.getElementById("image");
         imageElement.src = data.sprites.front_default;
         imageElement.style.display = "flex";
@@ -97,7 +122,7 @@ async function fetchData(pokemon) {
 
         const hiddenAbilityValue = document.getElementById("hiddenAbilityValue");
         hiddenAbilityValue.textContent = data.abilities[1].ability.name;
-
+    
     } catch (error) {
         console.error("ERRO:", error);
     }
