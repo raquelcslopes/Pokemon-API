@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/style.css">
-    <script src="/main.js"></script>
+    
 </head>
 <body>
+        <select id="dropdown">
+            <option value="pikachu">Pikachu</option>
+            <option value="bulbasaur">Bulbasaur</option>
+            <option value="charmander">Charmander</option>
+        </select>
+    </div>
     <div id="container">
         <div id="card">
             <img id="image"></img>
@@ -30,13 +36,35 @@
                     <div id="specialAttack"></div>
                     <div id="specialAttackValue"></div>
                 </div>
-                <div class="row"></div>
-                <div class="row"></div>
-                <div class="row"></div>
-                <div class="row"></div>
-                <div class="row"></div>
+                <div class="row">
+                    <div id="specialDefense"></div>
+                    <div id="specialDefenseValue"></div>
+                </div>
+                <div class="row">
+                    <div id="speed"></div>
+                    <div id="speedValue"></div>
+                </div>
+                <div class="row">
+                    <div id="height"></div>
+                    <div id="heightValue"></div>
+                </div>
+                <div class="row">
+                    <div id="weight"></div>
+                    <div id="weightValue"></div>
+                </div>
+                <div class="lastRow">
+                    <div id="ability">
+                        <div id="abilityName"></div>
+                        <div id="abilityValue"></div>
+                    </div>
+                    <div id="hiddenAbility">
+                        <div id="hiddenAbilityName"></div>
+                        <div id="hiddenAbilityValue"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script src="/main.js"></script>
