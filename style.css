@@ -1,10 +1,72 @@
-#container {
+body{
+    background-color: #d4daf4;
     display: flex;
+}
+
+#containerLeft {
+    display: flex;
+    width: 50%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+#containerRight {
+    display: flex;
+    width: 50%;
     height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+#centerDiv {
+    height: 60%;
+    width: 80%;
+}
+
+#titlePokemonAPI {
+    height: 20%;
+    width: 100%; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#titlePokemonAPI > img {
+margin-bottom: 20%;
+justify-self: center;
+}
+
+#text {
+        height: 50%;
+        width: 100%; 
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        font-size: 100px;
+        color: #113f67;
+        margin-top: 10%;
+        text-align: center;
+}
+
+#pokemonsList {
+    height: 10%;
+    width: 40%;
+    justify-self: center;
+    display: flex;
+}
+
+#dropdown {
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    display: flex;
+    height: 50%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 #card {
