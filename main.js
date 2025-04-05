@@ -1,11 +1,3 @@
-let pokemon = "";
-const dropdown = document.getElementById("dropdown");
-
-dropdown.addEventListener("change", function () {
-    pokemon = dropdown.options[dropdown.selectedIndex].text;
-        fetchData(pokemon);
-})
-
 async function fetchData(pokemon) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
@@ -15,27 +7,27 @@ async function fetchData(pokemon) {
         }
         const data = await response.json();
 
-        const bckg = document.getElementById("card");
+        const bckg = document.getElementById("type");
         console.log("oi")
         switch(data.types[0].type.name) {
             case "fire":
-                bckg.style.background = "linear-gradient(to bottom right, orange, red";
+                bckg.style.backgroundColor = "rgb(168, 109, 109)";
                 break;
 
         case "grass":
-            bckg.style.background= "linear-gradient(to bottom right, white, green";
+            bckg.style.backgroundColor = "rgb(118, 175, 117)";
             break;
 
             case "water":
-                bckg.style.background = "linear-gradient(to bottom right, blue, lightblue)";
+                bckg.style.backgroundColor = "rgb(153, 192, 197)";
                 break;
 
             case "electric":
-                bckg.style.background = "linear-gradient(to bottom right, yellow, gold)";
+                bckg.style.backgroundColor = "gold";
                 break;
                 
             default:
-                bckg.style.background = "linear-gradient(to bottom right, gray, white)";
+                bckg.style.backgroundColor = "gray";
                 break;
         }
     
@@ -47,80 +39,31 @@ async function fetchData(pokemon) {
         const typePokemon = document.getElementById("type");
         typePokemon.textContent = data.types[0].type.name;
         typePokemon.style.color = "white";
+        typePokemon.style.fontWeight = "bolder";
+        typePokemon.style.justifySelf = "center";
 
         const nameElement = document.getElementById("name");
         nameElement.textContent = data.forms[0].name;
         nameElement.style.fontWeight = "bold";
         nameElement.textContent = nameElement.textContent.toUpperCase();
 
-        const HPElement = document.getElementById("HP");
-        HPElement.textContent = "HP";
-        HPElement.style.fontWeight = "bold";
-
         const HPValue = document.getElementById("HPValue");
-        HPValue.textContent = data.stats[0].base_stat;
+        HPValue.textContent = "HP: " + data.stats[0].base_stat;
+        HPValue.style.display="relative"
 
-        const attackElement = document.getElementById("attack");
-        attackElement.textContent = "ATTACK";
-        attackElement.style.fontWeight = "bold";
-
-        const attackValue = document.getElementById("attackValue");
+        const attackValue = document.getElementById("attackText");
         attackValue.textContent = data.stats[1].base_stat;
 
-        const defenseElement = document.getElementById("defense");
-        defenseElement.textContent = "DEFENSE";
-        defenseElement.style.fontWeight = "bold";
-
-        const defenseValue = document.getElementById("defenseValue");
+        const defenseValue = document.getElementById("defenseText");
         defenseValue.textContent = data.stats[2].base_stat;
 
-        const specialAttackElement = document.getElementById("specialAttack");
-        specialAttackElement.textContent = "SPECIAL ATTACK";
-        specialAttackElement.style.fontWeight = "bold";
-
-        const specialAttackValue = document.getElementById("specialAttackValue");
-        specialAttackValue.textContent = data.stats[3].base_stat;
-
-        const specialDefenseelement = document.getElementById("specialDefense");
-        specialDefenseelement.textContent = "SPECIAL DEFENSE";
-        specialDefenseelement.style.fontWeight = "bold";
-
-        const specialDefenseValue = document.getElementById("specialDefenseValue");
-        specialDefenseValue.textContent = data.stats[4].base_stat;
-
-        const speedElement = document.getElementById("speed");
-        speedElement.textContent = "SPEED";
-        speedElement.style.fontWeight = "bold";
-
-        const speedValue = document.getElementById("speedValue");
+        const speedValue = document.getElementById("speedText");
         speedValue.textContent = data.stats[5].base_stat + " m/s";
 
-        const heightElement = document.getElementById("height");
-        heightElement.textContent = "HEIGHT";
-        heightElement.style.fontWeight = "bold";
-
-        const heightValue = document.getElementById("heightValue");
-        heightValue.textContent = data.height + " feets";
-
-        const weightElement = document.getElementById("weight");
-        weightElement.textContent = "WEIGHT";
-        weightElement.style.fontWeight = "bold";
-
-        const weightValue = document.getElementById("weightValue");
-        weightValue.textContent = data.weight + " pounds";
-
-        const abilityElement = document.getElementById("abilityName");
-        abilityElement.textContent = "ABILITY";
-        abilityElement.style.fontWeight = "bold";
-
-        const abilityValue = document.getElementById("abilityValue");
+        const abilityValue = document.getElementById("abilityText");
         abilityValue.textContent = data.abilities[0].ability.name;
 
-        const hiddenAbilityElement = document.getElementById("hiddenAbilityName");
-        hiddenAbilityElement.textContent = "HIDDEN ABILITY";
-        hiddenAbilityElement.style.fontWeight = "bold";
-
-        const hiddenAbilityValue = document.getElementById("hiddenAbilityValue");
+        const hiddenAbilityValue = document.getElementById("hiddenAbilityText");
         hiddenAbilityValue.textContent = data.abilities[1].ability.name;
     
     } catch (error) {

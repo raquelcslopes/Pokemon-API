@@ -14,71 +14,59 @@
             </div>
             <div id="text"> Choose your pokemon</div>
             <div id="pokemonsList">
-                <select id="dropdown">
-                    <option value="pikachu">Pikachu</option>
-                    <option value="bulbasaur">Bulbasaur</option>
-                    <option value="charmander">Charmander</option>
-                    <option value="charmander">Blastoise</option>
-                    <option value="charmander">Flareon</option>
-                    <option value="charmander">Charizard</option>
-                    <option value="charmander">Gengar</option>
-                    <option value="charmander">Alakazam</option>
-                </select>
+                <div id="dropdown">
+                    <button class="dropbtn">Gotta Catch 'Em All</button>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li onclick="fetchData('pikachu')" class="optionDropdown">pikachu</li>
+                            <li onclick="fetchData('blastoise')" class="optionDropdown">blastoise</li>
+                            <li onclick="fetchData('charizard')" class="optionDropdown">charizard</li>
+                            <li onclick="fetchData('bulbasaur')" class="optionDropdown">bulbasaur</li>
+                            <li onclick="fetchData('alakazam')" class="optionDropdown">alakazam</li>
+                          </ul>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
     <div id="containerRight">
         <div id="container">
             <div id="card">
-                <img id="image"></img>
-                <div id="type"></div>
+                <div id="img"><img id="image"></img></div>
                 <div id="info">
-                    <div id="name"></div>
-                    <div class="row">
-                        <div id="HP"></div>
+                    <div id="row1">
+                        <div id="name"></div>
+                        <div id="type"></div>
+                    </div>
+                    <div id="row2">
                         <div id="HPValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="attack"></div>
-                        <div id="attackValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="defense"></div>
-                        <div id="defenseValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="specialAttack"></div>
-                        <div id="specialAttackValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="specialDefense"></div>
-                        <div id="specialDefenseValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="speed"></div>
-                        <div id="speedValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="height"></div>
-                        <div id="heightValue"></div>
-                    </div>
-                    <div class="row">
-                        <div id="weight"></div>
-                        <div id="weightValue"></div>
-                    </div>
-                    <div class="lastRow">
-                        <div id="ability">
-                            <div id="abilityName"></div>
-                            <div id="abilityValue"></div>
+                        <div id="attackValue">
+                            <img src="/img/attack.png" alt="attack icon">
+                            <span id="attackText"></span>
                         </div>
-                        <div id="hiddenAbility">
-                            <div id="hiddenAbilityName"></div>
-                            <div id="hiddenAbilityValue"></div>
+                        <div id="defenseValue">
+                            <img src="/img/defense.png" alt="defense icon">
+                            <span  id="defenseText"></span>
+                        </div>
+                    </div>
+                    <div id="row3">
+                        <div id="speedValue">
+                            <img src="/img/speed.png" alt="speed icon">
+                            <span id="speedText"></span>
+                        </div>
+                        <div id="abilityValue">
+                            <img src="/img/ability.png" alt="ability icon">
+                            <span id="abilityText"></span>
+                        </div>
+                        <div id="hiddenAbilityValue">
+                            <img src="/img/hidden ability removido.png" alt="hidden ability">
+                            <span id="hiddenAbilityText"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
